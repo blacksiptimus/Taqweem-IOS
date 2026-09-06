@@ -42,3 +42,9 @@ Add prayer time widgets to your home screen for quick access.
 ## Watch Support
 
 Sync your settings with your Apple Watch for prayer times on the go.
+
+## Concept: Plate (lifestyle)
+
+**Plate** is a proposed lifestyle layer: photograph a cookbook recipe, sort ingredients, run light kitchen math, and get prayer-aware suggestions (cook now vs after Maghrib, Suhoor fit, scaled servings).
+
+See [Concept-Plate.md](./Concept-Plate.md) and the interactive demo at [`plate-prototype.html`](../plate-prototype.html).
