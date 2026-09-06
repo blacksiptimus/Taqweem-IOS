@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Clause",
+    "slug": "clause",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "clause",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F4EF"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.clause.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Clause needs photo access to upload contract images.",
+        "NSCameraUsageDescription": "Clause needs camera access to photograph agreements."
+      }
+    },
+    "android": {
+      "package": "com.clause.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#F7F4EF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-document-picker",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Clause to access your photos for contract uploads.",
+          "cameraPermission": "Allow Clause to use your camera for contract uploads."
+        }
+      ],
+      "expo-notifications"
+    ]
+  }
+}
