@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taqweem Plate — Lifestyle concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #18241f;
+    --muted: #5c6b63;
+    --paper: #f4f1ea;
+    --mist: #dfe8e2;
+    --sage: #2f4f42;
+    --sage-deep: #1e352c;
+    --leaf: #6f8f7a;
+    --copper: #b8612f;
+    --copper-soft: #e8c4a8;
+    --cream: #fbf8f2;
+    --line: rgba(24, 36, 31, 0.12);
+    --shadow: 0 18px 40px rgba(30, 53, 44, 0.12);
+    --radius: 18px;
+    --font-brand: "Syne", sans-serif;
+    --font-body: "Literata", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 700px at 10% -10%, #e7efe9 0%, transparent 55%),
+      radial-gradient(900px 600px at 100% 0%, #f3e2d2 0%, transparent 50%),
+      linear-gradient(180deg, #eef3ef 0%, var(--cream) 40%, #f7f0e6 100%);
+    min-height: 100vh;
+    line-height: 1.55;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  .wrap {
+    width: min(1120px, calc(100% - 2.5rem));
+    margin-inline: auto;
+  }
+
+  /* —— Hero —— */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    color: var(--cream);
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(20, 40, 32, 0.25) 0%, rgba(20, 40, 32, 0.55) 45%, rgba(14, 28, 22, 0.88) 100%),
+      url("https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1800&q=80")
+        center / cover no-repeat;
+    transform: scale(1.04);
+    animation: heroDrift 18s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroDrift {
+    from { transform: scale(1.04) translate3d(0, 0, 0); }
+    to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    padding: clamp(4rem, 12vh, 7rem) 0 clamp(3rem, 8vh, 5rem);
+  }
+
+  .brand {
+    font-family: var(--font-brand);
+    font-weight: 800;
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: riseIn 0.9s ease forwards 0.15s;
+  }
+
+  .brand span {
+    display: block;
+    font-weight: 600;
+    font-size: 0.38em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.55rem;
+  }
+
+  .hero h1 {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 3.2vw, 2.15rem);
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+    opacity: 0;
+    animation: riseIn 0.9s ease forwards 0.35s;
+  }
+
+  .hero p {
+    max-width: 34ch;
+    font-size: 1.05rem;
+    color: rgba(251, 248, 242, 0.82);
+    margin-bottom: 1.75rem;
+    opacity: 0;
+    animation: riseIn 0.9s ease forwards 0.5s;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    opacity: 0;
+    animation: riseIn 0.9s ease forwards 0.65s;
+  }
+
+  .btn {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    padding: 0.9rem 1.35rem;
+    border-radius: 999px;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: var(--cream);
+    color: var(--sage-deep);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    box-shadow: inset 0 0 0 1.5px rgba(251, 248, 242, 0.45);
+  }
+
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* —— Sections —— */
+  section {
+    padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  }
+
+  .section-kicker {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--font-brand);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    max-width: 16ch;
+    margin-bottom: 0.85rem;
+  }
+
+  .section-copy {
+    color: var(--muted);
+    max-width: 42ch;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  /* —— Demo —— */
+  .demo-shell {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 900px) {
+    .demo-shell {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+      gap: 1.75rem;
+    }
+  }
+
+  .panel {
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+
+  .panel h3 {
+    font-family: var(--font-brand);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+  }
+
+  .sample-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .sample {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 0.85rem;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 0.65rem;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+
+  .sample:hover,
+  .sample[aria-pressed="true"] {
+    border-color: var(--sage);
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  .sample img {
+    width: 88px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .sample strong {
+    display: block;
+    font-family: var(--font-brand);
+    font-size: 0.98rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .sample span {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  .result {
+    display: none;
+  }
+
+  .result.is-visible {
+    display: block;
+    animation: fadeSlide 0.45s ease;
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .recipe-head {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1.1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .recipe-head img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .recipe-head h2 {
+    font-family: var(--font-brand);
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 0.35rem;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: end;
+    margin-bottom: 1.25rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-family: var(--font-brand);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  input[type="number"],
+  select {
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.65rem 0.75rem;
+    min-width: 7rem;
+  }
+
+  .suggestion {
+    background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+    color: var(--cream);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .suggestion strong {
+    display: block;
+    font-family: var(--font-brand);
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .suggestion p {
+    font-size: 0.95rem;
+    color: rgba(251, 248, 242, 0.88);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .stat {
+    background: var(--mist);
+    border-radius: 12px;
+    padding: 0.75rem;
+  }
+
+  .stat b {
+    display: block;
+    font-family: var(--font-brand);
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  .stat span {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .groups {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .group h4 {
+    font-family: var(--font-brand);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+  }
+
+  .group ul {
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .group li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.95rem;
+  }
+
+  .group li em {
+    font-style: normal;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .empty-hint {
+    color: var(--muted);
+    font-size: 0.98rem;
+    padding: 1.5rem 0.25rem;
+  }
+
+  /* —— How it works —— */
+  .steps {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 760px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .step-num {
+    font-family: var(--font-brand);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--leaf);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .step h3 {
+    font-family: var(--font-brand);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .step p { color: var(--muted); }
+
+  footer {
+    padding: 2.5rem 0 3rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: var(--sage);
+    text-underline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="brand"><span>Taqweem</span>Plate</p>
+      <h1>Photo the cookbook. Sort your day.</h1>
+      <p>Capture a recipe, see it sorted, run light kitchen math, and get a prayer-aware suggestion.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#demo">Try the sample flow</a>
+        <a class="btn btn-ghost" href="Wiki/Concept-Plate.md">Read the concept</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="idea">
+      <div class="wrap">
+        <p class="section-kicker">Lifestyle direction</p>
+        <h2 class="section-title">Data you can cook with</h2>
+        <p class="section-copy">Not another feed — a quiet kitchen companion. Show the ingredients, do the small calculations, and suggest when to start around Maghrib and Fajr.</p>
+        <div class="steps">
+          <article class="step">
+            <div class="step-num">01</div>
+            <h3>Foto</h3>
+            <p>Snap a cookbook page. Plate pulls title, times, servings, and ingredients.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">02</div>
+            <h3>Sorted</h3>
+            <p>Ingredients land in produce, pantry, protein, dairy, and spices — ready for shopping.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">03</div>
+            <h3>Suggest</h3>
+            <p>Scale portions, compare cook time to the next prayer, and get one clear next step.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="wrap">
+        <p class="section-kicker">Interactive prototype</p>
+        <h2 class="section-title">Pick a sample recipe</h2>
+        <p class="section-copy">Pretend you just photographed the page. Watch Plate sort, calculate, and suggest.</p>
+
+        <div class="demo-shell">
+          <div class="panel">
+            <h3>Cookbook samples</h3>
+            <div class="sample-grid" id="samples"></div>
+          </div>
+
+          <div class="panel" id="result-panel">
+            <div class="empty-hint" id="empty">Choose a sample on the left to see sorted ingredients, kitchen math, and a suggestion.</div>
+            <div class="result" id="result"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Concept prototype for Taqweem · see
+      <a href="Wiki/Concept-Plate.md">Wiki/Concept-Plate.md</a>
+      for scope and privacy notes.
+    </div>
+  </footer>
+
+<script>
+const PRAYER = {
+  maghribMinutesFromNow: 95,
+  fajrLabel: "04:52",
+  maghribLabel: "18:41",
+};
+
+const RECIPES = [
+  {
+    id: "harira",
+    title: "Harira for Maghrib",
+    blurb: "Tomato lentil soup · 45 min",
+    image: "https://images.unsplash.com/photo-1547592166-23acba13311d?auto=format&fit=crop&w=800&q=80",
+    servings: 4,
+    prep: 15,
+    cook: 30,
+    mode: "iftar",
+    ingredients: [
+      { name: "Yellow onions", qty: 2, unit: "", cat: "produce", per: 0.5 },
+      { name: "Celery stalks", qty: 2, unit: "", cat: "produce", per: 0.5 },
+      { name: "Fresh cilantro", qty: 1, unit: "bunch", cat: "produce", per: 0.25 },
+      { name: "Crushed tomatoes", qty: 400, unit: "g", cat: "pantry", per: 100 },
+      { name: "Brown lentils", qty: 150, unit: "g", cat: "pantry", per: 37.5 },
+      { name: "Chickpeas, cooked", qty: 250, unit: "g", cat: "pantry", per: 62.5 },
+      { name: "Lamb shoulder, diced", qty: 300, unit: "g", cat: "protein", per: 75 },
+      { name: "Olive oil", qty: 2, unit: "tbsp", cat: "pantry", per: 0.5 },
+      { name: "Ground ginger", qty: 1, unit: "tsp", cat: "spices", per: 0.25 },
+      { name: "Turmeric", qty: 1, unit: "tsp", cat: "spices", per: 0.25 },
+    ],
+  },
+  {
+    id: "suhoor-oats",
+    title: "Date & yogurt Suhoor bowl",
+    blurb: "No stove rush · 10 min",
+    image: "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=800&q=80",
+    servings: 2,
+    prep: 8,
+    cook: 2,
+    mode: "suhoor",
+    ingredients: [
+      { name: "Rolled oats", qty: 80, unit: "g", cat: "pantry", per: 40 },
+      { name: "Greek yogurt", qty: 300, unit: "g", cat: "dairy", per: 150 },
+      { name: "Medjool dates", qty: 4, unit: "", cat: "produce", per: 2 },
+      { name: "Banana", qty: 1, unit: "", cat: "produce", per: 0.5 },
+      { name: "Honey", qty: 1, unit: "tbsp", cat: "pantry", per: 0.5 },
+      { name: "Chia seeds", qty: 1, unit: "tbsp", cat: "pantry", per: 0.5 },
+      { name: "Almonds, toasted", qty: 30, unit: "g", cat: "pantry", per: 15 },
+    ],
+  },
+  {
+    id: "roast-chicken",
+    title: "Herb roast chicken",
+    blurb: "Weekend tray bake · 85 min",
+    image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80",
+    servings: 4,
+    prep: 20,
+    cook: 65,
+    mode: "everyday",
+    ingredients: [
+      { name: "Whole chicken", qty: 1.5, unit: "kg", cat: "protein", per: 0.375 },
+      { name: "Lemons", qty: 2, unit: "", cat: "produce", per: 0.5 },
+      { name: "Garlic bulbs", qty: 1, unit: "", cat: "produce", per: 0.25 },
+      { name: "Baby potatoes", qty: 700, unit: "g", cat: "produce", per: 175 },
+      { name: "Fresh rosemary", qty: 4, unit: "sprigs", cat: "produce", per: 1 },
+      { name: "Olive oil", qty: 3, unit: "tbsp", cat: "pantry", per: 0.75 },
+      { name: "Sea salt", qty: 2, unit: "tsp", cat: "spices", per: 0.5 },
+      { name: "Black pepper", qty: 1, unit: "tsp", cat: "spices", per: 0.25 },
+    ],
+  },
+];
+
+const CAT_ORDER = ["produce", "protein", "dairy", "pantry", "spices"];
+const CAT_LABEL = {
+  produce: "Produce",
+  protein: "Protein",
+  dairy: "Dairy",
+  pantry: "Pantry",
+  spices: "Spices",
+};
+
+const samplesEl = document.getElementById("samples");
+const resultEl = document.getElementById("result");
+const emptyEl = document.getElementById("empty");
+
+let activeId = null;
+let servings = 4;
+
+function formatQty(value, unit) {
+  const rounded = Number.isInteger(value)
+    ? value
+    : Math.abs(value) >= 10
+      ? Math.round(value)
+      : Math.round(value * 10) / 10;
+  return unit ? `${rounded} ${unit}` : `${rounded}`;
+}
+
+function buildSuggestion(recipe, totalMin, targetServings) {
+  const until = PRAYER.maghribMinutesFromNow;
+  const scaleNote = targetServings !== recipe.servings
+    ? ` Scaled from ${recipe.servings} to ${targetServings} servings.`
+    : "";
+
+  if (recipe.mode === "suhoor") {
+    return {
+      title: "Suhoor window looks open",
+      body: `${totalMin} min total — finish well before Fajr (${PRAYER.fajrLabel}). Keep it light; dates + yogurt travel well.${scaleNote}`,
+    };
+  }
+
+  if (totalMin + 10 <= until) {
+    const startBy = until - totalMin;
+    return {
+      title: `Start within ${startBy} min`,
+      body: `Kitchen needs ${totalMin} min. Maghrib is ${PRAYER.maghribLabel} (about ${until} min). You can plate before prayer.${scaleNote}`,
+    };
+  }
+
+  if (totalMin > until && recipe.prep + 5 <= until) {
+    return {
+      title: "Prep now, cook after Maghrib",
+      body: `Only ${until} min until Maghrib, but prep is ${recipe.prep} min. Chop and measure now; finish the ${recipe.cook} min cook after prayer.${scaleNote}`,
+    };
+  }
+
+  return {
+    title: "Too tight before Maghrib",
+    body: `This needs ${totalMin} min and Maghrib is in ${until}. Save for after Isha, or pick a shorter Plate recipe.${scaleNote}`,
+  };
+}
+
+function renderSamples() {
+  samplesEl.innerHTML = RECIPES.map((r) => `
+    <button class="sample" type="button" data-id="${r.id}" aria-pressed="${r.id === activeId}">
+      <img src="${r.image}" alt="">
+      <div>
+        <strong>${r.title}</strong>
+        <span>${r.blurb}</span>
+      </div>
+    </button>
+  `).join("");
+}
+
+function renderResult() {
+  const recipe = RECIPES.find((r) => r.id === activeId);
+  if (!recipe) {
+    emptyEl.style.display = "block";
+    resultEl.classList.remove("is-visible");
+    resultEl.innerHTML = "";
+    return;
+  }
+
+  emptyEl.style.display = "none";
+  const totalMin = recipe.prep + recipe.cook;
+  const suggestion = buildSuggestion(recipe, totalMin, servings);
+  const grouped = CAT_ORDER.map((cat) => ({
+    cat,
+    items: recipe.ingredients.filter((i) => i.cat === cat),
+  })).filter((g) => g.items.length);
+
+  const scaledItems = recipe.ingredients.length;
+  const shoppingBits = CAT_ORDER
+    .map((cat) => {
+      const n = recipe.ingredients.filter((i) => i.cat === cat).length;
+      return n ? `${n} ${CAT_LABEL[cat].toLowerCase()}` : null;
+    })
+    .filter(Boolean)
+    .join(", ");
+
+  resultEl.innerHTML = `
+    <div class="recipe-head">
+      <img src="${recipe.image}" alt="">
+      <div>
+        <h2>${recipe.title}</h2>
+        <div class="meta">
+          <span>${recipe.prep + recipe.cook} min kitchen</span>
+          <span>Maghrib ${PRAYER.maghribLabel}</span>
+          <span>${scaledItems} ingredients</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <label>Servings
+        <input id="servings" type="number" min="1" max="12" value="${servings}">
+      </label>
+      <label>Sort by
+        <select id="sort" disabled>
+          <option>Shopping category</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="suggestion">
+      <strong>${suggestion.title}</strong>
+      <p>${suggestion.body}</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>${totalMin}m</b><span>prep + cook</span></div>
+      <div class="stat"><b>${PRAYER.maghribMinutesFromNow}m</b><span>until Maghrib</span></div>
+      <div class="stat"><b>${servings}</b><span>servings</span></div>
+    </div>
+
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0.85rem">Shopping: ${shoppingBits}.</p>
+
+    <div class="groups">
+      ${grouped.map((g) => `
+        <div class="group">
+          <h4>${CAT_LABEL[g.cat]}</h4>
+          <ul>
+            ${g.items.map((item) => {
+              const qty = item.per * servings;
+              return `<li><span>${item.name}</span><em>${formatQty(qty, item.unit)}</em></li>`;
+            }).join("")}
+          </ul>
+        </div>
+      `).join("")}
+    </div>
+  `;
+
+  resultEl.classList.add("is-visible");
+
+  const servingsInput = document.getElementById("servings");
+  servingsInput.addEventListener("change", () => {
+    const next = Math.max(1, Math.min(12, Number(servingsInput.value) || recipe.servings));
+    servings = next;
+    renderResult();
+  });
+}
+
+samplesEl.addEventListener("click", (e) => {
+  const btn = e.target.closest(".sample");
+  if (!btn) return;
+  activeId = btn.dataset.id;
+  const recipe = RECIPES.find((r) => r.id === activeId);
+  servings = recipe.servings;
+  renderSamples();
+  renderResult();
+});
+
+renderSamples();
+</script>
+</body>
+</html>

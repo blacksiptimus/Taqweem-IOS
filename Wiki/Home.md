@@ -15,6 +15,7 @@ Taqweem is a beautifully crafted Islamic app that helps you never miss a prayer 
 - **Daily Wisdom** - Stay inspired with daily quotes
 - **Widget Support** - Add prayer times to your home screen
 - **Watch Support** - Sync with Apple Watch
+- **Plate (concept)** - Photo a cookbook recipe → sorted ingredients, kitchen math, prayer-aware suggestions
 
 ## 📱 Download Now
 
