@@ -2,7 +2,7 @@
 
 ## How accurate are the prayer times?
 
-Taqweem uses the aladhan API and your exact location to calculate prayer times with high accuracy.
+Taqweem uses the Aladhan API and your location to calculate prayer times with high accuracy.
 
 ## Why do I need location permission?
 
@@ -34,8 +34,8 @@ Yes! Taqweem is free to download and use.
 
 ## Where can I report issues?
 
-Please open an issue on our GitHub repository.
+Please use our [Support page](https://blacksiptimus.github.io/Taqweem-IOS/support/) or email info@aqyrix.com.
 
 ## Is my data private?
 
-Yes! Taqweem only uses your location to calculate prayer times and does not share your data with third parties.
+Yes! See the [Privacy Policy](https://blacksiptimus.github.io/Taqweem-IOS/).
